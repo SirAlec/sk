@@ -3,11 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Iframe Test</title>
+
+    <title>Smash Karts - Embed Experiment</title>
 
     <style>
+        * {
+            box-sizing: border-box;
+        }
+
         body {
             margin: 0;
+            min-height: 100vh;
             background: #111;
             color: white;
             font-family: Arial, sans-serif;
@@ -15,24 +21,66 @@
         }
 
         h1 {
-            margin: 20px;
+            margin: 25px 0 10px;
         }
 
-        iframe {
+        p {
+            color: #aaa;
+            margin-bottom: 20px;
+        }
+
+        .game-container {
             width: 95%;
+            max-width: 1200px;
             height: 700px;
+            margin: 0 auto 30px;
             border: 2px solid #444;
+            border-radius: 12px;
+            overflow: hidden;
+            background: #000;
+        }
+
+        object {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 12px 24px;
+            margin-bottom: 25px;
+            background: #333;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+        }
+
+        .button:hover {
+            background: #555;
         }
     </style>
 </head>
 
 <body>
-    <h1>Smash Karts Embed Experiment</h1>
 
-    <iframe
-        src="https://smashkarts.io/"
-        allow="fullscreen"
-        allowfullscreen>
-    </iframe>
+    <h1>🏎️ Smash Karts</h1>
+
+    <p>Website embedding experiment</p>
+
+    <div class="game-container">
+        <object
+            data="https://smashkarts.io/"
+            type="text/html">
+        </object>
+    </div>
+
+    <a
+        class="button"
+        href="https://smashkarts.io/"
+        target="_blank">
+        Open Smash Karts
+    </a>
+
 </body>
 </html>
